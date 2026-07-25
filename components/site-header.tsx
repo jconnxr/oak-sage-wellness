@@ -13,7 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { SiteLogo } from "@/components/site-logo";
-import { mainNavLinks, serviceLinks } from "@/lib/site";
+import { mainNavLinks, serviceNavLinks } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function isActive(pathname: string, href: string) {
@@ -22,7 +22,7 @@ function isActive(pathname: string, href: string) {
 }
 
 function isServicesActive(pathname: string) {
-  return pathname.startsWith("/services");
+  return pathname.startsWith("/services") || pathname === "/body-scan";
 }
 
 export function SiteHeader() {
@@ -63,7 +63,7 @@ export function SiteHeader() {
               <ChevronDown className="size-3.5 opacity-70" />
             </DropdownMenuTrigger>
             <DropdownMenuContent align="start" className="min-w-52">
-              {serviceLinks.map((link) => (
+              {serviceNavLinks.map((link) => (
                 <DropdownMenuItem
                   key={link.href}
                   onSelect={() => {
@@ -80,6 +80,11 @@ export function SiteHeader() {
             href="/products"
             label="Products"
             active={isActive(pathname, "/products")}
+          />
+          <NavLink
+            href="/shop"
+            label="Shop Online"
+            active={isActive(pathname, "/shop")}
           />
           <NavLink
             href="/contact"
@@ -127,7 +132,7 @@ export function SiteHeader() {
             <p className="mt-2 px-3 text-xs font-medium tracking-wider text-muted-foreground uppercase">
               Services
             </p>
-            {serviceLinks.map((link) => (
+            {serviceNavLinks.map((link) => (
               <MobileLink
                 key={link.href}
                 href={link.href}

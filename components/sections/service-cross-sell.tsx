@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { ReactNode } from "react";
 
 import { PlaceholderImage } from "@/components/placeholder-image";
 import { Reveal } from "@/components/reveal";
@@ -14,11 +15,14 @@ import { serviceLinks } from "@/lib/site";
 type ServiceCrossSellProps = {
   title?: string;
   description?: string;
+  /** Optional secondary link or CTA below the service grid. */
+  footer?: ReactNode;
 };
 
 export function ServiceCrossSell({
   title = "Explore Our Services",
   description = "Four focused pathways to restore vitality, track progress, and feel stronger in your body.",
+  footer,
 }: ServiceCrossSellProps) {
   return (
     <Section className="bg-[color-mix(in_oklch,var(--sage),var(--cream)_92%)]">
@@ -51,6 +55,12 @@ export function ServiceCrossSell({
           </Reveal>
         ))}
       </div>
+
+      {footer ? (
+        <Reveal className="mt-10" delay={0.15}>
+          {footer}
+        </Reveal>
+      ) : null}
     </Section>
   );
 }

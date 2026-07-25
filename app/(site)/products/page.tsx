@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { PlaceholderImage } from "@/components/placeholder-image";
 import { Reveal } from "@/components/reveal";
@@ -59,6 +60,15 @@ export default function ProductsPage() {
             Support your weight loss journey with a natural, science-based
             program designed to help manage appetite, boost energy, and promote
             long-term wellness.
+          </p>
+          <p className="mt-5 text-base text-foreground/85">
+            Prefer to order online?{" "}
+            <Link
+              href="/shop"
+              className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
+            >
+              Shop directly from our trusted source →
+            </Link>
           </p>
         </Reveal>
         <Reveal className="mt-10" delay={0.08}>

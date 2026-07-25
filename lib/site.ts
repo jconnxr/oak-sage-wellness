@@ -23,10 +23,17 @@ export const serviceLinks = [
   },
 ] as const;
 
+/** Services dropdown / footer — includes Free Body Scan ahead of clinical services. */
+export const serviceNavLinks = [
+  { href: "/body-scan", label: "Free Body Scan" },
+  ...serviceLinks.map(({ href, label }) => ({ href, label })),
+] as const;
+
 export const mainNavLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/products", label: "Products" },
+  { href: "/shop", label: "Shop Online" },
   { href: "/contact", label: "Contact Us" },
 ] as const;
 
@@ -34,6 +41,7 @@ export const footerAboutLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
+  { href: "/shop", label: "Shop Online" },
   { href: "/contact", label: "Contact" },
 ] as const;
 

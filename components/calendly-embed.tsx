@@ -2,21 +2,16 @@
 
 import Script from "next/script";
 
-/**
- * Inline Calendly embed for appointment booking.
- *
- * TODO: replace with real Calendly event URL from Colby/Jason's account
- */
-const DEFAULT_CALENDLY_EVENT_TYPE_URL =
-  "https://calendly.com/oak-and-sage-placeholder/consultation";
+import { CALENDLY_EVENT_URL } from "@/lib/calendly";
 
 type CalendlyEmbedProps = {
-  /** Override the default consultation event type URL. */
+  /** Override the default event type URL. */
   eventUrl?: string;
 };
 
+/** Inline Calendly embed for appointment booking. */
 export function CalendlyEmbed({
-  eventUrl = DEFAULT_CALENDLY_EVENT_TYPE_URL,
+  eventUrl = CALENDLY_EVENT_URL,
 }: CalendlyEmbedProps) {
   return (
     <div className="overflow-hidden rounded-xl border border-border bg-card">

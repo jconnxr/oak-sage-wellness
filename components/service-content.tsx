@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { ReactNode } from "react";
 
 import { Reveal } from "@/components/reveal";
@@ -97,6 +98,8 @@ export function FeatureCardGrid({
 type Step = {
   title: string;
   body?: string;
+  /** Optional link wrapping the step title (e.g. Free Body Scan → /body-scan). */
+  href?: string;
 };
 
 export function StepList({
@@ -122,7 +125,16 @@ export function StepList({
               </span>
               <div>
                 <h3 className="font-display text-xl font-medium tracking-tight text-foreground">
-                  {step.title}
+                  {step.href ? (
+                    <Link
+                      href={step.href}
+                      className="transition-colors hover:text-primary"
+                    >
+                      {step.title}
+                    </Link>
+                  ) : (
+                    step.title
+                  )}
                 </h3>
                 {step.body ? (
                   <p className="mt-2 text-base leading-relaxed text-muted-foreground">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { CalendlyEmbed } from "@/components/calendly-embed";
 import { PlaceholderImage } from "@/components/placeholder-image";
+import { CALENDLY_EVENT_URL } from "@/lib/calendly";
 import { pageMetadata, SITE_LOCATION, SITE_NAME } from "@/lib/seo";
 import { siteContact } from "@/lib/site";
 
@@ -16,13 +17,6 @@ const valuePoints = [
   { label: "Takes 60 Seconds", detail: "In and out fast" },
   { label: "No Obligation", detail: "Just clarity on your health" },
 ] as const;
-
-/**
- * TODO: replace with real Calendly event URL for the Free Body Scan event type
- * (needs correct duration/buffer, marked in-person at the clinic)
- */
-const FREE_SCAN_CALENDLY_URL =
-  "https://calendly.com/oak-and-sage-placeholder/free-body-scan";
 
 export default function FreeScanLandingPage() {
   return (
@@ -63,7 +57,7 @@ export default function FreeScanLandingPage() {
         <h2 className="font-display mb-4 text-center text-2xl font-medium tracking-tight text-foreground">
           Book Your Free Scan
         </h2>
-        <CalendlyEmbed eventUrl={FREE_SCAN_CALENDLY_URL} />
+        <CalendlyEmbed eventUrl={CALENDLY_EVENT_URL} />
       </div>
 
       <section className="mt-14 border-t border-border pt-10 text-center sm:text-left">

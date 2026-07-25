@@ -6,6 +6,7 @@ import { ContactMap } from "@/components/contact-map";
 import { PlaceholderImage } from "@/components/placeholder-image";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
+import { CALENDLY_EVENT_URL } from "@/lib/calendly";
 import { pageMetadata, SITE_LOCATION, SITE_NAME } from "@/lib/seo";
 import { siteContact } from "@/lib/site";
 
@@ -108,7 +109,7 @@ export default function ContactPage() {
           </p>
         </Reveal>
         <Reveal className="mt-8" delay={0.05}>
-          <CalendlyEmbed />
+          <CalendlyEmbed eventUrl={CALENDLY_EVENT_URL} />
         </Reveal>
       </Section>
 

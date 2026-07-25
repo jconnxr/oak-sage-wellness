@@ -50,6 +50,7 @@ const journeySteps = [
   {
     title: "Free Body Scan & Report",
     body: "The 60-second scan reads 40 metrics and includes a 1-page report with free personal app tracking.",
+    href: "/body-scan",
   },
   {
     title: "Personalized Protocol",
