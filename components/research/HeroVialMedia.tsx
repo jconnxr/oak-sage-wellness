@@ -46,7 +46,7 @@ export function HeroVialMedia() {
 
   if (videoReady && videoSrc && !preferReducedMotion) {
     return (
-      <div className="relative aspect-square w-full overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900">
+      <div className="relative aspect-[768/429] w-full overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900">
         <video
           className="h-full w-full object-cover"
           autoPlay
@@ -63,7 +63,7 @@ export function HeroVialMedia() {
   }
 
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900">
+    <div className="relative aspect-[768/429] w-full overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900">
       <Image
         src={src}
         alt={alt}

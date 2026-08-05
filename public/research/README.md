@@ -4,9 +4,9 @@
 # in lib/research.ts to point at /research/<filename> instead of placehold.co.
 #
 # Required:
-#   hero-vial.jpg          1200×1200
+#   hero-vial.png           ✓ three-vial hero (in place)
 #   coa-sample.png         ✓ real Freedom Diagnostics COA (in place)
-#   catalog-01.jpg … 08    800×800
+#   catalog-01.jpg … 08    ✓ vial product shots (in place)
 #   og-research.jpg        1200×630
 #
 # Optional:

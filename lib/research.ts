@@ -9,10 +9,10 @@ export const RESEARCH_STOREFRONT_URL =
  */
 export const RESEARCH_MEDIA = {
   heroVial: {
-    src: "https://placehold.co/1200x1200/0a0a0a/38bdf8?text=HERO+VIAL",
-    width: 1200,
-    height: 1200,
-    alt: "Amber glass research vial on a dark studio background",
+    src: "/research/hero-vial.jpg",
+    width: 768,
+    height: 429,
+    alt: "Three Medi-Pep research vials — BPC-157, TB-500, and NAD — on a dark studio surface",
   },
   /** Optional looping video — set to "/research/hero-vial.mp4" when the file exists. */
   heroVialVideo: null as string | null,
