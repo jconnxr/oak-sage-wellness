@@ -13,10 +13,11 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { SiteLogo } from "@/components/site-logo";
-import { mainNavLinks, serviceNavLinks } from "@/lib/site";
+import { mainNavLinks, serviceNavLinks, shopOnlineUrl } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 function isActive(pathname: string, href: string) {
+  if (href.startsWith("http://") || href.startsWith("https://")) return false;
   if (href === "/") return pathname === "/";
   return pathname === href || pathname.startsWith(`${href}/`);
 }
@@ -82,9 +83,10 @@ export function SiteHeader() {
             active={isActive(pathname, "/products")}
           />
           <NavLink
-            href="/shop"
+            href={shopOnlineUrl}
             label="Shop Online"
-            active={isActive(pathname, "/shop")}
+            active={false}
+            external
           />
           <NavLink
             href="/contact"
@@ -150,6 +152,7 @@ export function SiteHeader() {
                 label={link.label}
                 active={isActive(pathname, link.href)}
                 onNavigate={() => setMobileOpen(false)}
+                external={"external" in link && link.external}
               />
             ))}
 
@@ -169,14 +172,19 @@ function NavLink({
   href,
   label,
   active,
+  external,
 }: {
   href: string;
   label: string;
   active: boolean;
+  external?: boolean;
 }) {
   return (
     <Link
       href={href}
+      {...(external
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : undefined)}
       className={cn(
         "inline-flex h-9 items-center rounded-lg px-3 text-sm font-medium transition-colors hover:bg-muted hover:text-foreground",
         active ? "text-primary" : "text-foreground/80",
@@ -193,17 +201,22 @@ function MobileLink({
   active,
   onNavigate,
   indented,
+  external,
 }: {
   href: string;
   label: string;
   active: boolean;
   onNavigate: () => void;
   indented?: boolean;
+  external?: boolean;
 }) {
   return (
     <Link
       href={href}
       onClick={onNavigate}
+      {...(external
+        ? { target: "_blank", rel: "noopener noreferrer" }
+        : undefined)}
       className={cn(
         "rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-muted",
         indented && "pl-5",

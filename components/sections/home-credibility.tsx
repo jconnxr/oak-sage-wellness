@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
+import { shopOnlineUrl } from "@/lib/site";
 
 /** Same credibility points used on /shop — surfaced on the homepage for first-visit trust. */
 const trustPoints = [
@@ -59,7 +60,13 @@ export function HomeCredibilitySection() {
       <Reveal className="mt-12" delay={0.15}>
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
           <Button asChild size="lg" className="h-11 px-6">
-            <Link href="/shop">Shop Online</Link>
+            <Link
+              href={shopOnlineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Shop Online
+            </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="h-11 px-6">
             <Link href="/body-scan">Book a Free Body Scan</Link>

@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { PlaceholderImage } from "@/components/placeholder-image";
 import { Button } from "@/components/ui/button";
+import { shopOnlineUrl } from "@/lib/site";
 
 const trustBadges = [
   "Locally Owned in Edmond, OK",
@@ -43,7 +44,9 @@ export function HomeHero() {
             size="lg"
             className="h-11 bg-cream px-6 text-charcoal hover:bg-cream/90"
           >
-            <Link href="/shop">Shop Online</Link>
+            <Link href={shopOnlineUrl} target="_blank" rel="noopener noreferrer">
+              Shop Online
+            </Link>
           </Button>
           <Button
             asChild

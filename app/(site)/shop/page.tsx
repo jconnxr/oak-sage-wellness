@@ -12,17 +12,13 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { pageMetadata, SITE_LOCATION, SITE_NAME } from "@/lib/seo";
+import { shopOnlineUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Shop Peptides Online",
   description: `Order the same peptides used in-clinic at ${SITE_NAME} in ${SITE_LOCATION} — sourced from our trusted US lab and available online through our verified partner portal.`,
   path: "/shop",
 });
-
-/**
- * TODO: replace with real affiliate storefront URL once Heidi provisions it.
- */
-const AFFILIATE_STORE_URL = "https://example.com/affiliate-store";
 
 const trustPoints = [
   {
@@ -69,7 +65,7 @@ function ShopNowButton({ className }: { className?: string }) {
   return (
     <Button asChild size="lg" className={className ?? "h-11 px-6"}>
       <a
-        href={AFFILIATE_STORE_URL}
+        href={shopOnlineUrl}
         target="_blank"
         rel="noopener noreferrer"
       >

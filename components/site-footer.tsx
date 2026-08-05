@@ -28,6 +28,9 @@ export function SiteFooter() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
+                    {...("external" in link && link.external
+                      ? { target: "_blank", rel: "noopener noreferrer" }
+                      : undefined)}
                     className="text-sm text-foreground/80 transition-colors hover:text-primary"
                   >
                     {link.label}

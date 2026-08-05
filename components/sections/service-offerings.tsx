@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { ServiceCrossSell } from "@/components/sections/service-cross-sell";
+import { shopOnlineUrl } from "@/lib/site";
 
 /** Home-page wrapper around the shared service card grid. */
 export function ServiceOfferingsSection() {
@@ -12,7 +13,9 @@ export function ServiceOfferingsSection() {
         <p className="text-base text-foreground/85">
           Looking to order peptides online instead?{" "}
           <Link
-            href="/shop"
+            href={shopOnlineUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
           >
             Visit our shop →

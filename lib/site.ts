@@ -1,5 +1,9 @@
 import type { ImageSlot } from "@/lib/images";
 
+/** MyPeptide partner microsite — clients buy peptides here. */
+export const shopOnlineUrl =
+  "https://mypeptide.net/d/oakandsagewellnesscenter" as const;
+
 export const serviceLinks = [
   {
     href: "/services/glp-3-peptides",
@@ -33,7 +37,7 @@ export const mainNavLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About Us" },
   { href: "/products", label: "Products" },
-  { href: "/shop", label: "Shop Online" },
+  { href: shopOnlineUrl, label: "Shop Online", external: true },
   { href: "/contact", label: "Contact Us" },
 ] as const;
 
@@ -41,7 +45,7 @@ export const footerAboutLinks = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/products", label: "Products" },
-  { href: "/shop", label: "Shop Online" },
+  { href: shopOnlineUrl, label: "Shop Online", external: true },
   { href: "/contact", label: "Contact" },
 ] as const;
 
@@ -51,7 +55,7 @@ export const siteContact = {
     "Edmond, OK 73013",
   ],
   phones: ["405-839-4934", "806-217-2775"],
-  email: "info@oakandsage.com",
+  email: "support@oakandsagewellnesscenter.com",
   hours: [
     "Mon–Fri 9:00 AM – 7:00 PM",
     "Sat–Sun 9:00 AM – 9:00 PM",

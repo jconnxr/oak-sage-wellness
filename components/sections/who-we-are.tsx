@@ -4,7 +4,7 @@ import { PhotoCollage } from "@/components/photo-collage";
 import { Reveal } from "@/components/reveal";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
-import { siteContact } from "@/lib/site";
+import { shopOnlineUrl, siteContact } from "@/lib/site";
 
 type WhoWeAreProps = {
   /** Optional id for in-page anchors */
@@ -64,7 +64,13 @@ export function WhoWeAreSection({
                 </address>
                 <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                   <Button asChild size="lg" className="h-11 px-6">
-                    <Link href="/shop">Shop Online</Link>
+                    <Link
+                      href={shopOnlineUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Shop Online
+                    </Link>
                   </Button>
                   <Button
                     asChild

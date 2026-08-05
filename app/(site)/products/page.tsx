@@ -13,6 +13,7 @@ import {
 } from "@/components/ui/card";
 import type { ImageSlot } from "@/lib/images";
 import { pageMetadata, SITE_LOCATION, SITE_NAME } from "@/lib/seo";
+import { shopOnlineUrl } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Products",
@@ -64,7 +65,9 @@ export default function ProductsPage() {
           <p className="mt-5 text-base text-foreground/85">
             Prefer to order online?{" "}
             <Link
-              href="/shop"
+              href={shopOnlineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
             >
               Shop directly from our trusted source →
