@@ -31,8 +31,8 @@ export const images = {
   logo: {
     src: "/images/logo.png",
     alt: "Oak and Sage Wellness Center",
-    width: 182,
-    height: 104,
+    width: 703,
+    height: 451,
     description: "Brand logo — athlete mark with Oak and Sage wordmark",
   },
   "hero-home": {
@@ -177,6 +177,13 @@ export const images = {
     height: 1001,
     description:
       "Products — GLP-3 Peptides Pain Relief / Non-Narcotic Relief medication",
+  },
+  "product-tirzepatide": {
+    src: "/images/product-tirzepatide.png",
+    alt: "Tirzepatide 60 mg research vial — Medi-Pep, for professional use only",
+    width: 640,
+    height: 640,
+    description: "Products — Tirzepatide 60 mg vial product photography",
   },
   "contact-hero": {
     src: "/images/contact-hero.png",

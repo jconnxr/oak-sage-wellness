@@ -5,7 +5,7 @@
 #
 # Required:
 #   hero-vial.jpg          1200×1200
-#   coa-sample.jpg         1000×1400  (must be a real COA — do not AI-generate)
+#   coa-sample.png         ✓ real Freedom Diagnostics COA (in place)
 #   catalog-01.jpg … 08    800×800
 #   og-research.jpg        1200×630
 #

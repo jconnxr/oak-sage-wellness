@@ -23,6 +23,17 @@ export const metadata: Metadata = pageMetadata({
 
 const products = [
   {
+    title: "Tirzepatide 60 mg",
+    image: "product-tirzepatide" as ImageSlot,
+    body: "A dual GIP/GLP-1 receptor agonist peptide supplied for clinician-guided metabolic programs. Available through Oak & Sage as part of a supervised wellness protocol focused on appetite regulation, glycemic support, and sustainable body-composition change.",
+    benefits: [
+      "Dual GIP/GLP-1 Pathway",
+      "Clinician-Guided Protocol",
+      "Metabolic Support",
+      "Professional-Use Compound",
+    ],
+  },
+  {
     title: "GLP-3 Peptides Weight Loss Medication Toolkit",
     image: "product-toolkit" as ImageSlot,
     body: "This three-phase program combines a ketosis-support formula, an appetite-support blend, and a hunger-control supplement designed to work together. The system supports fat metabolism, helps manage cravings, and promotes steady energy to assist with consistent, sustainable weight management. The Toolkit includes clinically studied ingredients shown to support appetite control and waistline reduction in controlled trials. In one published 10-week randomized study, a key ingredient was associated with significant weight and waistline improvements. These science-based components are designed to support measurable progress without relying on prescription injections.",

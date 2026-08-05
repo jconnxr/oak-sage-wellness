@@ -17,7 +17,7 @@ export function SiteLogo({
   priority = false,
   onNavigate,
 }: SiteLogoProps) {
-  const width = Math.round((height * 182) / 104);
+  const width = Math.round((height * 703) / 451);
 
   return (
     <Link

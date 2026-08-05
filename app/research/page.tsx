@@ -3,6 +3,7 @@ import Link from "next/link";
 import { FileCheck, MapPin, Snowflake } from "lucide-react";
 
 import { ComplianceBanner } from "@/components/research/ComplianceBanner";
+import { CoaVerifyCallout } from "@/components/research/CoaVerifyCallout";
 import { EmailCapture } from "@/components/research/EmailCapture";
 import { HeroVialMedia } from "@/components/research/HeroVialMedia";
 import { SpecCard } from "@/components/research/SpecCard";
@@ -50,10 +51,10 @@ export default function ResearchPage() {
             <Image
               src="/images/logo.png"
               alt="Oak & Sage Wellness Center"
-              width={77}
-              height={44}
+              width={110}
+              height={70}
               priority
-              className="h-10 w-auto brightness-0 invert"
+              className="h-10 w-auto"
             />
           </Link>
           <p className="text-xs tracking-wide text-neutral-400 sm:text-sm">
@@ -130,17 +131,23 @@ export default function ResearchPage() {
 
         {/* F. COA explainer */}
         <section className="border-b border-neutral-900 py-16 lg:py-20">
-          <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-2 lg:gap-16">
-            <div className="relative mx-auto w-full max-w-sm overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900 lg:mx-0">
-              <Image
-                src={MEDIA.coaSample.src}
-                alt={MEDIA.coaSample.alt}
-                width={MEDIA.coaSample.width}
-                height={MEDIA.coaSample.height}
-                loading="lazy"
-                sizes="(max-width: 1024px) 90vw, 380px"
-                className="h-auto w-full object-cover"
-              />
+          <div className="mx-auto grid max-w-6xl items-start gap-12 px-6 lg:grid-cols-2 lg:gap-16">
+            <div className="mx-auto w-full max-w-sm space-y-6 lg:mx-0">
+              <div className="relative overflow-hidden rounded-lg border border-neutral-800 bg-neutral-900">
+                <Image
+                  src={MEDIA.coaSample.src}
+                  alt={MEDIA.coaSample.alt}
+                  width={MEDIA.coaSample.width}
+                  height={MEDIA.coaSample.height}
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 90vw, 380px"
+                  className="h-auto w-full object-cover"
+                />
+              </div>
+              {/* Mobile: callout sits directly under the COA image */}
+              <div className="lg:hidden">
+                <CoaVerifyCallout />
+              </div>
             </div>
             <div>
               <h2 className="text-2xl font-medium tracking-tight text-neutral-100 sm:text-3xl">
@@ -159,6 +166,10 @@ export default function ResearchPage() {
                   If a supplier cannot produce batch-level analytical data for
                   the material shipped, that material is undocumented.
                 </p>
+              </div>
+              {/* Desktop: callout in the text column, above the disclaimer */}
+              <div className="mt-8 hidden lg:block">
+                <CoaVerifyCallout />
               </div>
               <p className="mt-6 text-xs leading-relaxed text-neutral-500">
                 Analytical documentation describes material composition and
