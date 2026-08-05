@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 
 import { CalendlyEmbed } from "@/components/calendly-embed";
 import { Reveal } from "@/components/reveal";
@@ -11,16 +10,19 @@ import { CALENDLY_EVENT_URL } from "@/lib/calendly";
 import { pageMetadata, SITE_LOCATION, SITE_NAME } from "@/lib/seo";
 import { getVideo } from "@/lib/videos";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Free Body Scan",
-  description: `Start with a free 60-second Fit3D body scan at ${SITE_NAME} in ${SITE_LOCATION} — see your 3D avatar, review 40+ metrics with our team, and explore personalized next steps with no obligation.`,
-  path: "/body-scan",
-});
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: "Free Body Scan",
+    description: `Start with a free one-minute Fit3D SNAP body scan at ${SITE_NAME} in ${SITE_LOCATION} — see your 3D avatar, review 400+ measurements with our team, and explore personalized next steps with no obligation.`,
+    path: "/body-scan",
+  }),
+  robots: { index: false, follow: true },
+};
 
 const journeySteps = [
   {
     title: "Book Your Free Body Scan",
-    body: "In just 60 seconds, our Fit3D scanner builds a detailed 3D avatar of your body and measures 40+ metrics — body fat percentage, muscle mass, metabolic rate, and more. It's the clearest starting point most people never get to see.",
+    body: "In about a minute, SNAP by Fit3D captures a full-color 3D avatar and 400+ measurements — including weight, body fat percentage, fat mass, lean mass, VAT mass, waist circumference, and a Body Shape Rating. It's a clear starting point most people never get to see.",
   },
   {
     title: "Review Your Results With Our Team",
@@ -35,15 +37,15 @@ const journeySteps = [
 const differentiators = [
   {
     title: "A 3D avatar you can see",
-    body: "Fit3D builds a visual 3D avatar of your body — not just a number on a scale — so you can see shape and proportion alongside your metrics.",
+    body: "SNAP by Fit3D builds a visual 3D avatar of your body — not just a number on a scale — so you can see shape and proportion alongside your metrics.",
   },
   {
     title: "Track changes over time",
     body: "Return for follow-up scans and compare results across visits, so progress is measured with the same detailed picture each time.",
   },
   {
-    title: "Non-invasive and under a minute",
-    body: "The scan is completely non-invasive and typically takes under 60 seconds — a quick, comfortable starting point.",
+    title: "Non-invasive and about a minute",
+    body: "You stand in front of a mounted tablet and turn slowly through one full rotation. Nothing touches you, there's no radiation, and the capture itself takes about a minute.",
   },
   {
     title: "Results explained in person",
@@ -51,6 +53,10 @@ const differentiators = [
   },
 ] as const;
 
+/**
+ * Facebook ad landing page — stripped conversion focus.
+ * Do not add before/after body imagery or main-site nav chrome here.
+ */
 export default function BodyScanPage() {
   return (
     <>
@@ -64,9 +70,9 @@ export default function BodyScanPage() {
             Start With a Free Body Scan
           </h1>
           <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            See exactly where you stand with a 60-second 3D body scan — no cost,
-            no obligation, and it&apos;s the first step most of our clients take
-            before starting a personalized program.
+            See exactly where you stand with a one-minute SNAP by Fit3D scan —
+            no cost, no obligation, and it&apos;s the first step most of our
+            clients take before starting a personalized program.
           </p>
           <Button asChild size="lg" className="mt-8 h-11 px-6">
             <a href="#book-scan">Book Your Free Scan</a>
@@ -102,7 +108,7 @@ export default function BodyScanPage() {
             What Makes Our Scan Different
           </h2>
           <p className="mt-3 max-w-xl text-muted-foreground">
-            Fit3D technology gives you a clearer picture than weight alone —
+            SNAP by Fit3D gives you a clearer picture than weight alone —
             detailed, visual, and explained with you in the room.
           </p>
         </Reveal>
@@ -123,30 +129,18 @@ export default function BodyScanPage() {
         </div>
       </Section>
 
-      {/* Bundle callout */}
+      {/* Bundle callout — no outbound service links (ad landing stays sealed) */}
       <Section>
         <Reveal>
           <p className="mx-auto max-w-2xl text-center text-base leading-relaxed text-foreground/85 md:text-lg">
-            Many clients pair their scan results with our{" "}
-            <Link
-              href="/services/skin-tightening"
-              className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
-            >
-              Skin Tightening
-            </Link>{" "}
-            or{" "}
-            <Link
-              href="/services/glp-3-peptides"
-              className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
-            >
-              GLP-3
-            </Link>{" "}
-            programs as part of one simple plan.
+            Many clients pair their scan results with skin tightening or GLP-3
+            programs as part of one simple plan — we can walk through options
+            during your visit, with no obligation to continue.
           </p>
         </Reveal>
       </Section>
 
-      {/* Calendly booking */}
+      {/* Calendly booking — same event URL as the rest of the site */}
       <Section
         id="book-scan"
         className="bg-[color-mix(in_oklch,var(--sage),var(--cream)_92%)]"

@@ -69,7 +69,7 @@ export function HomeCredibilitySection() {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="h-11 px-6">
-            <Link href="/body-scan">Book a Free Body Scan</Link>
+            <Link href="/services/body-composition">Book a Free Body Scan</Link>
           </Button>
         </div>
       </Reveal>

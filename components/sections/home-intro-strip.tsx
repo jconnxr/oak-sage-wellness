@@ -3,8 +3,8 @@ import { Section } from "@/components/section";
 
 const introItems = [
   {
-    title: "Body Composition & Skin Tightening",
-    body: "Track your transformation with precise body composition scanning and non-invasive structural skin tightening treatments.",
+    title: "3D Body Scan & Skin Tightening",
+    body: "Track your transformation with a free SNAP by Fit3D scan and non-invasive structural skin tightening treatments.",
   },
   {
     title: "Pain Relief",

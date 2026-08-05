@@ -98,7 +98,7 @@ export function FeatureCardGrid({
 type Step = {
   title: string;
   body?: string;
-  /** Optional link wrapping the step title (e.g. Free Body Scan → /body-scan). */
+              /** Optional link wrapping the step title. */
   href?: string;
 };
 

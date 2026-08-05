@@ -12,7 +12,7 @@ export const serviceLinks = [
   },
   {
     href: "/services/body-composition",
-    label: "Body Composition",
+    label: "3D Body Scan",
     image: "service-body-composition-1" satisfies ImageSlot,
   },
   {
@@ -27,9 +27,8 @@ export const serviceLinks = [
   },
 ] as const;
 
-/** Services dropdown / footer — includes Free Body Scan ahead of clinical services. */
+/** Services dropdown / footer — clinical services only (no ad landing routes). */
 export const serviceNavLinks = [
-  { href: "/body-scan", label: "Free Body Scan" },
   ...serviceLinks.map(({ href, label }) => ({ href, label })),
 ] as const;
 

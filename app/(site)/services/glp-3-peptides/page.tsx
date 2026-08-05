@@ -48,9 +48,9 @@ const whyCards = [
 
 const journeySteps = [
   {
-    title: "Free Body Scan & Report",
-    body: "The 60-second scan reads 40 metrics and includes a 1-page report with free personal app tracking.",
-    href: "/body-scan",
+    title: "Free 3D Body Scan & Report",
+    body: "A one-minute SNAP by Fit3D scan with 400+ measurements and a full-color 3D avatar — reviewed with our team.",
+    href: "/services/body-composition",
   },
   {
     title: "Personalized Protocol",

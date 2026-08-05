@@ -5,7 +5,6 @@ import { getSiteUrl } from "@/lib/seo";
 const routes = [
   "/",
   "/about",
-  "/body-scan",
   "/services/glp-3-peptides",
   "/services/body-composition",
   "/services/skin-tightening",

@@ -44,7 +44,7 @@ const inPersonOptions = [
     title: "Free Body Scan",
     description:
       "A quick in-clinic body composition scan to understand your baseline before you decide next steps.",
-    href: "/body-scan",
+    href: "/services/body-composition",
   },
   {
     title: "Skin Tightening",

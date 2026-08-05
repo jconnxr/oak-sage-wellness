@@ -86,7 +86,11 @@ export default function ProductsPage() {
           </p>
         </Reveal>
         <Reveal className="mt-10" delay={0.08}>
-          <PlaceholderImage slot="products-hero" className="rounded-xl" priority />
+          <PlaceholderImage
+            slot="products-hero"
+            className="max-h-[28rem] rounded-xl object-contain md:max-h-[32rem]"
+            priority
+          />
         </Reveal>
       </Section>
 
