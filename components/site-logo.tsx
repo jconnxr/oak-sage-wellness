@@ -23,7 +23,7 @@ export function SiteLogo({
     <Link
       href="/"
       onClick={onNavigate}
-      className={cn("inline-flex shrink-0 items-center", className)}
+      className={cn("inline-flex h-full shrink-0 items-center", className)}
       aria-label="Oak and Sage Wellness Center — Home"
     >
       <PlaceholderImage
@@ -31,7 +31,8 @@ export function SiteLogo({
         width={width}
         height={height}
         priority={priority}
-        className="h-auto w-auto"
+        className="w-auto object-contain"
+        style={{ height, width: "auto" }}
       />
     </Link>
   );

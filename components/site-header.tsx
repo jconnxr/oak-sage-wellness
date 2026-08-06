@@ -35,7 +35,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-50 border-b border-border/80 bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-6xl items-center gap-4 px-6 lg:h-[4.5rem]">
         <SiteLogo
-          height={44}
+          height={40}
           priority
           onNavigate={() => setMobileOpen(false)}
         />
