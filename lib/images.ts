@@ -140,11 +140,11 @@ export const images = {
   },
   "service-skin-tightening-1": {
     src: "/images/service-skin-tightening.png",
-    alt: "Perfect Shape neo — skin tightening device used at Oak & Sage Wellness Center",
-    width: 657,
-    height: 940,
+    alt: "Client relaxing beside the ERIS Sculpture System during a skin tightening session at Oak & Sage Wellness Center",
+    width: 1024,
+    height: 1024,
     description:
-      "Skin Tightening — Perfect Shape neo device / treatment technology",
+      "Skin Tightening — ERIS Sculpture System treatment room photography",
   },
   "service-skin-tightening-2": {
     src: "/images/service-skin-tightening-2.png",
