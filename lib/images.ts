@@ -99,12 +99,12 @@ export const images = {
     description: "GLP-3 Peptides — supporting clinical preparation detail",
   },
   "service-body-composition-snap": {
-    src: "/images/fit3d/scanning-2x.png",
-    alt: "Person completing a SNAP by Fit3D body scan with the measurement app overlay visible",
-    width: 1160,
-    height: 1058,
+    src: "/images/fit3d/snap-cover.png",
+    alt: "SNAP by Fit3D scanning station with 3D body avatar",
+    width: 940,
+    height: 667,
     description:
-      "3D Body Scan — Fit3D scanning photo (home service card)",
+      "3D Body Scan — Fit3D SNAP cover photo (home service card)",
   },
   "service-body-composition-1": {
     src: "/images/service-body-composition-1.png",
