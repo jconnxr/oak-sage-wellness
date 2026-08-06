@@ -2,9 +2,9 @@
 
 export const FIT3D_MEDIA = {
   scanning: {
-    src: "/images/fit3d/scanning.jpg",
-    width: 580,
-    height: 529,
+    src: "/images/fit3d/scanning-2x.png",
+    width: 1160,
+    height: 1058,
     alt: "Person completing a SNAP by Fit3D body scan with the measurement app overlay visible",
   },
   before: {

@@ -147,6 +147,7 @@ export default function BodyCompositionPage() {
                 width={MEDIA.scanning.width}
                 height={MEDIA.scanning.height}
                 priority
+                quality={90}
                 sizes="(max-width: 1024px) 100vw, 560px"
                 className="h-auto w-full object-cover"
               />

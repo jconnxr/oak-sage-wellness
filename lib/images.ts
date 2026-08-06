@@ -79,10 +79,10 @@ export const images = {
   },
   "about-value": {
     src: "/images/about-value.png",
-    alt: "Amber peptide serum vials on marble at Oak & Sage Wellness Center",
-    width: 872,
-    height: 871,
-    description: "About — restorative care / peptide product atmosphere",
+    alt: "Medi-Pep research vials — BPC-157, TB-500, and NAD — on a dark studio surface",
+    width: 768,
+    height: 429,
+    description: "About — three-vial peptide product photography",
   },
   "service-glp3-1": {
     src: "/images/service-glp3-1.png",
@@ -99,12 +99,12 @@ export const images = {
     description: "GLP-3 Peptides — supporting clinical preparation detail",
   },
   "service-body-composition-snap": {
-    src: "/images/fit3d/snap-station.jpg",
-    alt: "SNAP by Fit3D scanning station beside a 3D body avatar",
-    width: 267,
-    height: 189,
+    src: "/images/fit3d/scanning-2x.png",
+    alt: "Person completing a SNAP by Fit3D body scan with the measurement app overlay visible",
+    width: 1160,
+    height: 1058,
     description:
-      "3D Body Scan — SNAP by Fit3D station product shot (home service card)",
+      "3D Body Scan — Fit3D scanning photo (home service card)",
   },
   "service-body-composition-1": {
     src: "/images/service-body-composition-1.png",

@@ -1,7 +1,7 @@
 /** Research landing page — media paths and storefront URL (single source). */
 
 export const RESEARCH_STOREFRONT_URL =
-  "https://mypeptide.net/d/oakandsagewellnesscenter?utm_source=meta&utm_medium=cpc&utm_campaign=research_bridge" as const;
+  "https://mypeptide.net/d/oakandsagewellnesscenter/products?utm_source=meta&utm_medium=cpc&utm_campaign=research_bridge" as const;
 
 /**
  * Swap placehold.co URLs for local files under /public/research/ when assets are ready.
