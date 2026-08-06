@@ -24,6 +24,7 @@ export function PlaceholderImage({
   width,
   height,
   fill,
+  sizes,
   ...props
 }: PlaceholderImageProps) {
   const image = getImage(slot);
@@ -34,6 +35,7 @@ export function PlaceholderImage({
         src={image.src}
         alt={alt ?? image.alt}
         fill
+        sizes={sizes ?? "100vw"}
         className={cn("object-cover", className)}
         {...props}
       />
@@ -46,6 +48,9 @@ export function PlaceholderImage({
       alt={alt ?? image.alt}
       width={width ?? image.width}
       height={height ?? image.height}
+      sizes={
+        sizes ?? "(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+      }
       className={cn("h-auto w-full object-cover", className)}
       {...props}
     />

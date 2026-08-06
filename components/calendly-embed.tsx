@@ -49,8 +49,8 @@ export function CalendlyEmbed({
       <iframe
         title={title}
         src={src}
-        className="block min-h-[700px] w-full border-0 bg-card"
-        style={{ minWidth: "320px", height: "700px" }}
+        className="block min-h-[700px] w-full max-w-full border-0 bg-card"
+        style={{ height: "700px" }}
         allow="payment"
       />
       <p className="border-t border-border px-4 py-3 text-center text-xs text-muted-foreground">

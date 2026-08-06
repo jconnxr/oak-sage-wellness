@@ -96,7 +96,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="ml-auto flex items-center gap-2 lg:ml-4">
-          <Button asChild size="lg" className="hidden px-4 sm:inline-flex">
+          <Button asChild size="lg" className="hidden min-h-11 px-4 sm:inline-flex">
             <Link href="/contact">Book Appointment</Link>
           </Button>
 
@@ -104,7 +104,7 @@ export function SiteHeader() {
             type="button"
             variant="ghost"
             size="icon"
-            className="lg:hidden"
+            className="min-h-11 min-w-11 lg:hidden"
             aria-expanded={mobileOpen}
             aria-controls="mobile-nav"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}

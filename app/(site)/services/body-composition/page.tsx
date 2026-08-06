@@ -352,7 +352,7 @@ export default function BodyCompositionPage() {
       {/* H. Closing CTA + Calendly */}
       <Section
         id="book-scan"
-        className="bg-primary text-primary-foreground"
+        className="scroll-mt-20 bg-primary text-primary-foreground"
       >
         <Reveal>
           <div className="mx-auto max-w-3xl text-center">
@@ -384,7 +384,7 @@ export default function BodyCompositionPage() {
         </Reveal>
       </Section>
 
-      <Section id="calendly-embed">
+      <Section id="calendly-embed" className="scroll-mt-20">
         <Reveal>
           <h2 className="font-display text-2xl font-medium tracking-tight text-foreground md:text-3xl">
             Choose a time

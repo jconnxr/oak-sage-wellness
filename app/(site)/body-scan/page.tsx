@@ -143,7 +143,7 @@ export default function BodyScanPage() {
       {/* Calendly booking — same event URL as the rest of the site */}
       <Section
         id="book-scan"
-        className="bg-[color-mix(in_oklch,var(--sage),var(--cream)_92%)]"
+        className="scroll-mt-20 bg-[color-mix(in_oklch,var(--sage),var(--cream)_92%)]"
       >
         <Reveal>
           <h2 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">

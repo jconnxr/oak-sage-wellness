@@ -25,7 +25,7 @@ export function PhotoCollage({
   const isLeft = overlap === "bottom-left";
 
   return (
-    <div className={cn("relative mx-auto w-full max-w-xl", className)}>
+    <div className={cn("relative mx-auto w-full max-w-xl overflow-x-clip", className)}>
       {/* Soft organic blob */}
       <div
         aria-hidden
