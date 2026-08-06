@@ -53,7 +53,7 @@ export const siteContact = {
     "15812 N Pennsylvania Ave, Suite 3",
     "Edmond, OK 73013",
   ],
-  phones: ["405-839-4934", "806-217-2775"],
+  phones: ["405-839-4934"],
   email: "support@oakandsagewellnesscenter.com",
   hours: [
     "Mon–Fri 9:00 AM – 7:00 PM",

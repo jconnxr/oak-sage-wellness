@@ -184,14 +184,14 @@ export const images = {
     width: 1001,
     height: 1001,
     description:
-      "Products — GLP-3 Peptides Pain Relief / Non-Narcotic Relief medication",
+      "Products — Non-Narcotic Relief medication",
   },
   "product-tirzepatide": {
     src: "/images/product-tirzepatide.png",
-    alt: "Tirzepatide 60 mg research vial — Medi-Pep, for professional use only",
-    width: 640,
-    height: 640,
-    description: "Products — Tirzepatide 60 mg vial product photography",
+    alt: "GLP-2 60 mg research vial — Medi-Pep, for professional use only",
+    width: 1000,
+    height: 1000,
+    description: "Products — GLP-2 60 mg vial product photography",
   },
   "contact-hero": {
     src: "/images/contact-hero.png",

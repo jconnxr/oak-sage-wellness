@@ -1,158 +1,237 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
-import { PlaceholderImage } from "@/components/placeholder-image";
-import { Reveal } from "@/components/reveal";
+import { CatalogShopCard } from "@/components/products/catalog-shop-card";
+import { ProductCard } from "@/components/products/product-card";
 import { Section } from "@/components/section";
 import { Button } from "@/components/ui/button";
+import { getImage } from "@/lib/images";
 import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import type { ImageSlot } from "@/lib/images";
-import { pageMetadata, SITE_LOCATION, SITE_NAME } from "@/lib/seo";
+  CATALOG_COMPOUND_COUNT,
+  FEATURED_PRODUCTS,
+  PRODUCT_CATEGORIES,
+  PRODUCTS_COMPLIANCE,
+} from "@/lib/products";
+import { getSiteUrl, pageMetadata, SITE_NAME } from "@/lib/seo";
 import { shopOnlineUrl } from "@/lib/site";
 
-export const metadata: Metadata = pageMetadata({
-  title: "Products",
-  description: `${SITE_NAME} products in ${SITE_LOCATION} — natural weight loss toolkit and pain relief support without prescription injections.`,
-  path: "/products",
-});
+const PAGE_PATH = "/products";
+const BOOK_CONSULT_HREF = "/contact";
+const BOOK_SCAN_HREF = "/services/body-composition";
 
-const products = [
-  {
-    title: "Tirzepatide 60 mg",
-    image: "product-tirzepatide" as ImageSlot,
-    body: "A dual GIP/GLP-1 receptor agonist peptide supplied for clinician-guided metabolic programs. Available through Oak & Sage as part of a supervised wellness protocol focused on appetite regulation, glycemic support, and sustainable body-composition change.",
-    benefits: [
-      "Dual GIP/GLP-1 Pathway",
-      "Clinician-Guided Protocol",
-      "Metabolic Support",
-      "Professional-Use Compound",
-    ],
-  },
-  {
-    title: "GLP-3 Peptides Weight Loss Medication Toolkit",
-    image: "product-toolkit" as ImageSlot,
-    body: "This three-phase program combines a ketosis-support formula, an appetite-support blend, and a hunger-control supplement designed to work together. The system supports fat metabolism, helps manage cravings, and promotes steady energy to assist with consistent, sustainable weight management. The Toolkit includes clinically studied ingredients shown to support appetite control and waistline reduction in controlled trials. In one published 10-week randomized study, a key ingredient was associated with significant weight and waistline improvements. These science-based components are designed to support measurable progress without relying on prescription injections.",
-    benefits: [
-      "Supports Fat Metabolism",
-      "Promotes Steady Energy",
-      "Science-Based Ingredients",
-      "Non-Prescription Approach",
-    ],
-  },
-  {
-    title: "GLP-3 Peptides Pain Relief Medication",
-    image: "product-pain-relief" as ImageSlot,
-    body: "This powerful product promotes the body's natural healing process from the pain that composes over 70% of all visits to a primary doctor. A natural and less dangerous alternative to opiate-based narcotics like Oxycodone.",
-    benefits: [
-      "Supports Natural Pain Relief",
-      "Promotes Faster Recovery",
-      "Natural Alternative",
-      "Non-Addictive Support",
-    ],
-  },
-] as const;
+export const metadata: Metadata = {
+  ...pageMetadata({
+    title: `Peptides & Wellness Products | ${SITE_NAME}, Edmond OK`,
+    description: `Research peptides, non-prescription support formulas, and recovery products. Shop ${CATALOG_COMPOUND_COUNT} compounds online with batch documentation, or visit our Edmond, Oklahoma clinic.`,
+    path: PAGE_PATH,
+    absoluteTitle: true,
+  }),
+  robots: { index: true, follow: true },
+};
+
+function ProductsJsonLd() {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Featured products",
+    itemListElement: FEATURED_PRODUCTS.map((product, index) => {
+      const image = getImage(product.image);
+      return {
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "Product",
+          name: product.name,
+          description: product.description,
+          image: `${getSiteUrl()}${image.src}`,
+          brand: {
+            "@type": "Brand",
+            name: SITE_NAME,
+          },
+        },
+      };
+    }),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
 
 export default function ProductsPage() {
   return (
     <>
-      <Section className="pb-10 md:pb-12">
-        <Reveal>
-          <p className="text-sm tracking-[0.18em] text-muted-foreground uppercase">
-            Products
-          </p>
-          <h1 className="font-display mt-3 max-w-3xl text-4xl font-medium tracking-tight text-foreground md:text-5xl">
-            The Natural Path to Sustainable Wellness
-          </h1>
-          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
-            Support your weight loss journey with a natural, science-based
-            program designed to help manage appetite, boost energy, and promote
-            long-term wellness.
-          </p>
-          <p className="mt-5 text-base text-foreground/85">
-            Prefer to order online?{" "}
-            <Link
+      <ProductsJsonLd />
+
+      {/* A. Hero */}
+      <Section className="py-16 md:py-24">
+        <p className="text-sm tracking-[0.18em] text-muted-foreground uppercase">
+          Products
+        </p>
+        <h1 className="font-display mt-3 max-w-3xl text-4xl font-medium tracking-tight text-foreground md:text-5xl">
+          Clinical-Quality Products, Sourced and Supported Locally
+        </h1>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted-foreground">
+          Non-prescription support formulas available here, plus{" "}
+          {CATALOG_COMPOUND_COUNT} compounds in our online catalog — shop online
+          or visit our Edmond clinic.
+        </p>
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+          <Button asChild size="lg" className="min-h-11 px-6">
+            <a
               href={shopOnlineUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
             >
-              Shop directly from our trusted source →
-            </Link>
-          </p>
-        </Reveal>
-        <Reveal className="mt-10" delay={0.08}>
-          <PlaceholderImage
-            slot="products-hero"
-            className="max-h-[28rem] rounded-xl object-contain md:max-h-[32rem]"
-            priority
-          />
-        </Reveal>
+              Shop the Full Catalog →
+            </a>
+          </Button>
+          <Button asChild size="lg" variant="outline" className="min-h-11 px-6">
+            <Link href={BOOK_CONSULT_HREF}>Book a Free Consultation →</Link>
+          </Button>
+        </div>
       </Section>
 
-      {products.map((product, index) => (
-        <Section
-          key={product.title}
-          className={
-            index % 2 === 1
-              ? "bg-[color-mix(in_oklch,var(--sage),var(--cream)_92%)]"
-              : undefined
-          }
-        >
-          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
-            <Reveal delay={0.05}>
-              <PlaceholderImage slot={product.image} className="rounded-xl" />
-            </Reveal>
-
-            <Reveal>
-              <h2 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">
-                {product.title}
-              </h2>
-              <p className="mt-5 text-base leading-relaxed text-muted-foreground">
-                {product.body}
-              </p>
-
-              <div className="mt-8 grid gap-3 sm:grid-cols-2">
-                {product.benefits.map((benefit) => (
-                  <Card key={benefit} size="sm" className="py-3">
-                    <CardHeader className="px-4 py-0">
-                      <CardTitle className="text-sm font-medium">
-                        {benefit}
-                      </CardTitle>
-                      <CardDescription className="sr-only">
-                        Product benefit
-                      </CardDescription>
-                    </CardHeader>
-                  </Card>
-                ))}
-              </div>
-
-              {/*
-                TODO — confirm whether brochure links should point to the
-                franchisor's domain or be replaced with locally-hosted PDFs.
-                Do not link to nuwavewellnessoc.com.
-              */}
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <Button type="button" size="lg" className="h-11 px-6">
-                  Read The Brochure
-                </Button>
-                <Button
-                  type="button"
-                  size="lg"
-                  variant="outline"
-                  className="h-11 px-6"
-                >
-                  Download Brochure
-                </Button>
-              </div>
-            </Reveal>
+      {/* B. Two paths */}
+      <Section className="bg-[color-mix(in_oklch,var(--sage),var(--cream)_92%)] pt-0 md:pt-0">
+        <div className="grid gap-6 md:grid-cols-2 lg:gap-8">
+          <div className="flex h-full flex-col rounded-xl border border-border bg-card p-6 md:p-8">
+            <h2 className="font-display text-2xl font-medium tracking-tight text-foreground">
+              Order Online
+            </h2>
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground md:text-base">
+              Browse {CATALOG_COMPOUND_COUNT} compounds with third-party
+              certificates of analysis on every batch. Sourced and shipped from
+              the USA.
+            </p>
+            <Button asChild className="mt-6 min-h-11 w-full sm:w-auto">
+              <a
+                href={shopOnlineUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shop Online →
+              </a>
+            </Button>
           </div>
-        </Section>
-      ))}
+
+          <div className="flex h-full flex-col rounded-xl border border-border bg-card p-6 md:p-8">
+            <h2 className="font-display text-2xl font-medium tracking-tight text-foreground">
+              Visit the Clinic
+            </h2>
+            <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground md:text-base">
+              Start with a free 3D body scan, review your results with our team,
+              and build a plan around what you&apos;re actually trying to do.
+            </p>
+            <Button asChild className="mt-6 min-h-11 w-full sm:w-auto">
+              <Link href={BOOK_SCAN_HREF}>Book a Free Scan →</Link>
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* C. Featured products + catalog CTA */}
+      <Section>
+        <h2 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">
+          Featured Products
+        </h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          Clinic-ready support formulas below — peptides and the rest of our{" "}
+          {CATALOG_COMPOUND_COUNT} compound catalog are available online.
+        </p>
+
+        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-8 xl:grid-cols-3">
+          {FEATURED_PRODUCTS.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+          <CatalogShopCard />
+        </div>
+      </Section>
+
+      {/* E. Category browse */}
+      <Section className="bg-[color-mix(in_oklch,var(--sage),var(--cream)_92%)]">
+        <h2 className="font-display text-3xl font-medium tracking-tight text-foreground md:text-4xl">
+          Explore the Full Catalog
+        </h2>
+        <p className="mt-3 max-w-2xl text-muted-foreground">
+          {CATALOG_COMPOUND_COUNT} research compounds and support products, all
+          with batch documentation.
+        </p>
+
+        <ul className="mt-10 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {PRODUCT_CATEGORIES.map((category) => (
+            <li key={category.label}>
+              <a
+                href={category.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex min-h-11 items-center rounded-xl border border-border bg-card px-5 py-4 text-sm font-medium text-foreground transition-colors hover:border-primary/40 hover:text-primary md:text-base"
+              >
+                {category.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-8">
+          <Button asChild size="lg" className="min-h-11 px-6">
+            <a
+              href={shopOnlineUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View All Products →
+            </a>
+          </Button>
+        </div>
+      </Section>
+
+      {/* G. Closing CTA */}
+      <Section className="bg-primary text-primary-foreground">
+        <div className="mx-auto max-w-3xl text-center">
+          <h2 className="font-display text-3xl font-medium tracking-tight md:text-4xl">
+            Not sure where to start?
+          </h2>
+          <p className="mt-4 text-base text-primary-foreground/85 md:text-lg">
+            Book a free 3D body scan. We&apos;ll walk through your results and
+            figure out what actually fits — no pressure, no obligation.
+          </p>
+          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+            <Button
+              asChild
+              size="lg"
+              variant="secondary"
+              className="min-h-11 px-6"
+            >
+              <Link href={BOOK_SCAN_HREF}>Book a Free Scan</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="min-h-11 border-primary-foreground/40 bg-transparent px-6 text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground"
+            >
+              <a
+                href={shopOnlineUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shop Online
+              </a>
+            </Button>
+          </div>
+        </div>
+      </Section>
+
+      {/* Compliance footer */}
+      <div className="border-t border-border bg-background px-6 py-8">
+        <p className="mx-auto max-w-6xl text-xs leading-relaxed text-muted-foreground md:text-sm">
+          {PRODUCTS_COMPLIANCE}
+        </p>
+      </div>
     </>
   );
 }
