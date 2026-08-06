@@ -13,7 +13,7 @@ export const serviceLinks = [
   {
     href: "/services/body-composition",
     label: "3D Body Scan",
-    image: "service-body-composition-1" satisfies ImageSlot,
+    image: "service-body-composition-snap" satisfies ImageSlot,
   },
   {
     href: "/services/skin-tightening",

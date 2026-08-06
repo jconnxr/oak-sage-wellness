@@ -98,6 +98,14 @@ export const images = {
     height: 558,
     description: "GLP-3 Peptides — supporting clinical preparation detail",
   },
+  "service-body-composition-snap": {
+    src: "/images/fit3d/snap-station.jpg",
+    alt: "SNAP by Fit3D scanning station beside a 3D body avatar",
+    width: 267,
+    height: 189,
+    description:
+      "3D Body Scan — SNAP by Fit3D station product shot (home service card)",
+  },
   "service-body-composition-1": {
     src: "/images/service-body-composition-1.png",
     alt: "Body composition analyzer used for free scans at Oak & Sage Wellness Center",

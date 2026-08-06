@@ -2,21 +2,21 @@
 
 export const FIT3D_MEDIA = {
   scanning: {
-    src: "https://placehold.co/1200x900/4a5d3f/f5f0e6/png?text=Fit3D+Scanning",
-    width: 1200,
-    height: 900,
+    src: "/images/fit3d/scanning.jpg",
+    width: 580,
+    height: 529,
     alt: "Person completing a SNAP by Fit3D body scan with the measurement app overlay visible",
   },
   before: {
-    src: "https://placehold.co/800x1000/f5f0e6/b91c1c/png?text=Before+Avatar",
-    width: 800,
-    height: 1000,
+    src: "/images/fit3d/before.png",
+    width: 580,
+    height: 392,
     alt: "Sample Fit3D 3D body avatar with red measurement callouts labeled Before",
   },
   after: {
-    src: "https://placehold.co/800x1000/f5f0e6/15803d/png?text=After+Avatar",
-    width: 800,
-    height: 1000,
+    src: "/images/fit3d/after.png",
+    width: 580,
+    height: 392,
     alt: "Sample Fit3D 3D body avatar with green measurement callouts labeled After",
   },
   logo: {
